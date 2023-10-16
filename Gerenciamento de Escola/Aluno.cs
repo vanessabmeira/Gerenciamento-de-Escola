@@ -8,13 +8,25 @@ namespace Gerenciamento_de_Escola
         public int matricula;
         public List<Curso> listaDeCursos;
 
-        public Aluno(int matricula, List<Curso> listaDeCursos, string nome, int idade): base (nome, idade)
+        public Aluno(int matricula, string nome, int idade): base (nome, idade)
         {
             this.matricula = matricula;
-            this.listaDeCursos = listaDeCursos;
+            this.listaDeCursos = new List<Curso>();
         }
 
+        public void MatricularEmCurso(Curso curso)
+        {
+            if (curso != null && !listaDeCursos.Contains(curso))
+            {
+                listaDeCursos.Add(curso);
+                curso.MatricularAluno(this);
+            }
+        }
 
+        public List<Curso> ExibirCursosMatriculados()
+        {
+            return listaDeCursos;
+        }
 
     }
 }

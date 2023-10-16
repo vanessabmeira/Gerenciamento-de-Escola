@@ -28,9 +28,26 @@ namespace GerenciamentoEscolar
     {
         static void Main(string[] args)
         {
-          List<Curso> listaCursos = new();
+            Curso cursoCsharp = new Curso("C#", 101);
+            Curso cursoJava = new Curso("Java", 102);
 
-            
+            Aluno alunoVanessa = new Aluno(1, "Vanessa", 20);
+            Aluno alunoEwerson = new Aluno(2, "Ewerson", 21);
+
+            cursoCsharp.MatricularAluno(alunoVanessa);
+            cursoJava.MatricularAluno(alunoEwerson);
+
+            Console.WriteLine($"Aluno(a) {alunoVanessa.nome} está matriculado(a) nos cursos:");
+            foreach (var curso in alunoVanessa.ExibirCursosMatriculados())
+            {
+                Console.WriteLine(curso.nomeCurso);
+            }
+
+            Console.WriteLine($"Aluno(a) {alunoEwerson.nome} está matriculado(a) nos cursos:");
+            foreach (var curso in alunoEwerson.ExibirCursosMatriculados())
+            {
+                Console.WriteLine(curso.nomeCurso);
+            }
         }
     }
 }
