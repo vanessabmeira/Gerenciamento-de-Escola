@@ -10,18 +10,23 @@ namespace Gerenciamento_de_Escola
     {
         public string nomeCurso;
         public int codigoCurso;
-        public string alunosMatriculados;
-        public string disciplina;
+        public List<Aluno> alunosMatriculados;
+        public List<Disciplina> disciplina;
 
-        public Curso (string nomeCurso, int codigoCurso, string alunosMatriculados, string disciplina)
+        public Curso (string nomeCurso, int codigoCurso)
         {
             this.nomeCurso = nomeCurso;
             this.codigoCurso = codigoCurso;
-            this.alunosMatriculados = alunosMatriculados;
-            this.disciplina = disciplina;
+            this.alunosMatriculados = new List<Aluno>();
+            this.disciplina = new List<Disciplina>();
         }
-        public void MatricularAluno()
+        public void MatricularAluno(Aluno aluno)
         {
+            if (aluno != null && !alunosMatriculados.Contains(aluno))
+            {
+                alunosMatriculados.Add(aluno);
+                aluno.MatricularEmCurso(this);
+            }
         }
     }
 }
