@@ -64,7 +64,7 @@ namespace GerenciamentoEscolar
         Console.WriteLine($"Disciplina: {disc.nomeDisciplina}");
       }
 
-      Disciplina disciplina2 = new Disciplina("História", 45, "Estudo dos eventos históricos.");
+      Disciplina disciplina2 = new Disciplina("Banco de Dados", 45, "Banco de Dados Relacional");
       professor1.AtribuirDisciplina(disciplina2);
       Console.WriteLine($"Disciplinas Lecionadas por {professor1.nome}:");
       foreach (var disc in professor1.listaDisciplinas)
