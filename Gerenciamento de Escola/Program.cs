@@ -24,30 +24,53 @@ using System;
 
 namespace GerenciamentoEscolar
 {
-    class program
+  class program
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Curso cursoCsharp = new Curso("C#", 101);
-            Curso cursoJava = new Curso("Java", 102);
+      /* Teste das Classes Aluno e Curso */
+      Curso cursoCsharp = new Curso("C#", 101);
+      Curso cursoJava = new Curso("Java", 102);
 
-            Aluno alunoVanessa = new Aluno(1, "Vanessa", 20);
-            Aluno alunoEwerson = new Aluno(2, "Ewerson", 21);
+      Aluno alunoVanessa = new Aluno(1, "Vanessa", 20);
+      Aluno alunoEwerson = new Aluno(2, "Ewerson", 21);
 
-            cursoCsharp.MatricularAluno(alunoVanessa);
-            cursoJava.MatricularAluno(alunoEwerson);
+      cursoCsharp.MatricularAluno(alunoVanessa);
+      cursoJava.MatricularAluno(alunoEwerson);
 
-            Console.WriteLine($"Aluno(a) {alunoVanessa.nome} está matriculado(a) nos cursos:");
-            foreach (var curso in alunoVanessa.ExibirCursosMatriculados())
+      Console.WriteLine($"Aluno(a) {alunoVanessa.nome} está matriculado(a) nos cursos:");
+      foreach (var curso in alunoVanessa.ExibirCursosMatriculados())
+      {
+        Console.WriteLine(curso.nomeCurso);
+      }
+
+      Console.WriteLine($"Aluno(a) {alunoEwerson.nome} está matriculado(a) nos cursos:");
+      foreach (var curso in alunoEwerson.ExibirCursosMatriculados())
+      {
+        Console.WriteLine(curso.nomeCurso);
+      }
+
+      /* Teste das Classes Disciplina e Professor */
+      Disciplina disciplina1 = new Disciplina("POO", 80, "Programação Orientada a Objetos");
+      Console.WriteLine($"Nome da Disciplina: {disciplina1.nomeDisciplina}");
+      Console.WriteLine($"Carga Horária: {disciplina1.cargaHoraria}");
+      Console.WriteLine($"Ementa: {disciplina1.ementa}");
+
+      Professor professor1 = new Professor(new List<Disciplina> { disciplina1 }, "Amanda", 27);
+      Console.WriteLine($"Nome do Professor: {professor1.nome}");
+      Console.WriteLine($"Idade: {professor1.idade}");
+      foreach (var disc in professor1.listaDisciplinas)
+      {
+        Console.WriteLine($"Disciplina: {disc.nomeDisciplina}");
+      }
+
+      Disciplina disciplina2 = new Disciplina("História", 45, "Estudo dos eventos históricos.");
+      professor1.AtribuirDisciplina(disciplina2);
+      Console.WriteLine($"Disciplinas Lecionadas por {professor1.nome}:");
+      foreach (var disc in professor1.listaDisciplinas)
             {
-                Console.WriteLine(curso.nomeCurso);
+                Console.WriteLine(disc.nomeDisciplina);
             }
-
-            Console.WriteLine($"Aluno(a) {alunoEwerson.nome} está matriculado(a) nos cursos:");
-            foreach (var curso in alunoEwerson.ExibirCursosMatriculados())
-            {
-                Console.WriteLine(curso.nomeCurso);
-            }
-        }
     }
+  }
 }
