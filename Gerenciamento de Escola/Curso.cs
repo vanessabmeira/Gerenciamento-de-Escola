@@ -24,7 +24,7 @@ namespace Gerenciamento_de_Escola
         /// Responsável por adicionar/relacionar o aluno em um curso.
         /// </summary>
         /// <param name="aluno"></param>
-        public void MatricularAluno(Aluno aluno)
+        internal void MatricularAluno(Aluno aluno)
         {
             if (aluno != null && !alunosMatriculados.Contains(aluno))
             {
@@ -37,7 +37,7 @@ namespace Gerenciamento_de_Escola
         /// Responsável por adicionar a disciplina na lista de disciplinas
         /// </summary>
         /// <param name="disciplina"></param>
-        public void AdicionarDisciplina(Disciplina disciplina)
+        internal void AdicionarDisciplina(Disciplina disciplina)
         {
             if (disciplina != null && !listaDisciplinas.Contains(disciplina))
             {

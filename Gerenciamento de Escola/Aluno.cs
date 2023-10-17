@@ -17,7 +17,7 @@ namespace Gerenciamento_de_Escola
         /// Método responsável por adicionar o aluno na lista de um curso.
         /// </summary>
         /// <param name="curso"></param>
-        public void MatricularEmCurso(Curso curso)
+        internal void MatricularEmCurso(Curso curso)
         {
             if (curso != null && !listaDeCursos.Contains(curso))
             {
