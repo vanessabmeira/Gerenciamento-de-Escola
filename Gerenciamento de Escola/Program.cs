@@ -1,4 +1,4 @@
-﻿using Gerenciamento_de_Escola;
+using Gerenciamento_de_Escola;
 using System;
 //Imagine que você está desenvolvendo um sistema de gerenciamento de escola.
 
@@ -49,6 +49,10 @@ namespace GerenciamentoEscolar
       {
         Console.WriteLine(curso.nomeCurso);
       }
+
+      Console.WriteLine();
+
+      Console.WriteLine("------------------------------------------");
 
       /* Teste das Classes Disciplina e Professor */
       Disciplina disciplina1 = new Disciplina("POO", 80, "Programação Orientada a Objetos");
