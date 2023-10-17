@@ -38,19 +38,11 @@ namespace GerenciamentoEscolar
       cursoCsharp.MatricularAluno(alunoVanessa);
       cursoJava.MatricularAluno(alunoEwerson);
 
-      Console.WriteLine($"Aluno(a) {alunoVanessa.nome} está matriculado(a) nos cursos:");
-      foreach (var curso in alunoVanessa.ExibirCursosMatriculados())
-      {
-        Console.WriteLine(curso.nomeCurso);
-      }
+      alunoVanessa.Exibir();
+      alunoEwerson.Exibir();
 
-      Console.WriteLine($"Aluno(a) {alunoEwerson.nome} está matriculado(a) nos cursos:");
-      foreach (var curso in alunoEwerson.ExibirCursosMatriculados())
-      {
-        Console.WriteLine(curso.nomeCurso);
-      }
 
-      Console.WriteLine();
+            Console.WriteLine();
 
       Console.WriteLine("------------------------------------------");
 

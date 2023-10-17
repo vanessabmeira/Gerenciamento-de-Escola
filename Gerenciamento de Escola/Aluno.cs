@@ -5,15 +5,18 @@ namespace Gerenciamento_de_Escola
 {
     public class Aluno : Pessoa
     {
-        public int matricula;
-        public List<Curso> listaDeCursos;
+        private int matricula;
+        private List<Curso> listaDeCursos;
 
         public Aluno(int matricula, string nome, int idade): base (nome, idade)
         {
             this.matricula = matricula;
             this.listaDeCursos = new List<Curso>();
         }
-
+        /// <summary>
+        /// Método responsável por adicionar o aluno na lista de um curso.
+        /// </summary>
+        /// <param name="curso"></param>
         public void MatricularEmCurso(Curso curso)
         {
             if (curso != null && !listaDeCursos.Contains(curso))
@@ -23,9 +26,13 @@ namespace Gerenciamento_de_Escola
             }
         }
 
-        public List<Curso> ExibirCursosMatriculados()
+        public override void Exibir()
         {
-            return listaDeCursos;
+            Console.WriteLine($"Aluno(a) {this.nome} está matriculado(a) nos cursos:");
+            foreach (var curso in this.listaDeCursos)
+            {
+                Console.WriteLine(curso.nomeCurso);
+            }
         }
 
     }

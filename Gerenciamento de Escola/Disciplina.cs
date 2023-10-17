@@ -8,9 +8,9 @@ namespace Gerenciamento_de_Escola
 {
     public class Disciplina
     {
-        public string nomeDisciplina;
-        public double cargaHoraria;
-        public string ementa;
+        internal string nomeDisciplina;
+        internal double cargaHoraria;
+        internal string ementa;
 
         public Disciplina (string nomeDisciplina, double cargaHoraria, string ementa)
         {
